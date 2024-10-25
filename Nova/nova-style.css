@@ -204,3 +204,12 @@
 .hide{
   display: none !important;
 }
+
+.bot-response-container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  word-wrap: break-word;
+  margin-right: 35px;
+}

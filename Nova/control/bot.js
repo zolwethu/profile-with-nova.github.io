@@ -47,7 +47,10 @@ const renderMessageEle = (txt, type) => {
         const botResponseContainer = document.createElement("div");
         botResponseContainer.classList.add("bot-response-container");
         const botImage = document.createElement("img");
-        botImage.setAttribute("src", "./Nova/images/Nebula profile/Nebula Icon.png")
+        botImage.setAttribute("src", "Nova/images/Nebula-profile/Nebula-Icon.2.png");
+        botResponseContainer.append(botImage);
+        botResponseContainer.append(messageEle);
+        chatBody.append(botResponseContainer);
     }else{
         messageEle.classList.add(className);
         chatBody.append(messageEle);
