@@ -362,6 +362,7 @@ body {
     stroke: var(--border-color);
 }
 
+
 .progress-card .number {
     position: absolute;
     top: 40%;
