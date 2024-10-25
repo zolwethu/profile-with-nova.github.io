@@ -4,6 +4,9 @@ const chatBody = document.querySelector(".chat-body");
 const textInput = document.querySelector("#text-input");
 const send = document.querySelector(".send");
 const loadingEle = document.querySelector(".loading");
+const chatHeader = document.querySelector(".chat-header");
+const container = document.querySelector(".bot-container");
+
 
 send.addEventListener("click", () => renderUserMessage());
 
@@ -12,6 +15,12 @@ textInput.addEventListener("keyup", (event) => {
     if (event.keyCode === 13) {
         renderUserMessage();
     }
+});
+
+
+// EXPAND AND COLLAPSE CHATBOT
+chatHeader.addEventListener("click", () => {
+    container.classList.toggle("collapse");
 });
 
 // RENDER USER MESSAGES
@@ -35,7 +44,7 @@ const renderChatbotResponse = (userInput) => {
 const renderMessageEle = (txt, type) => {
     // DIFF CHAT BORDER STYLES FOR USER AND BOT
     let className = "user-message";
-    
+
     const messageEle = document.createElement("div");
     const textNode = document.createTextNode(txt);
     messageEle.classList.add(className);
@@ -51,11 +60,11 @@ const renderMessageEle = (txt, type) => {
         botResponseContainer.append(botImage);
         botResponseContainer.append(messageEle);
         chatBody.append(botResponseContainer);
-    }else{
+    } else {
         messageEle.classList.add(className);
         chatBody.append(messageEle);
     }
-    
+
 };
 
 // GETTING BOT RESPONSES, and if user input is empty
@@ -66,9 +75,9 @@ const getChatbotResponse = (userInput) => {
             setScrollPosition();
             toggleLoading(true);
         })
-        .catch((error) => { 
+        .catch((error) => {
             toggleLoading(true);
-         });
+        });
 };
 
 // SET SCROLL POSITION
