@@ -1,3 +1,5 @@
+import chatBotService from "./chatbot-services.js";
+
 const chatBody = document.querySelector(".chat-body");
 const textInput = document.querySelector("#text-input");
 const send = document.querySelector(".send");
@@ -20,40 +22,55 @@ const renderUserMessage = () => {
 
     toggleLoading(false);
     // DELAY CHATBOT RESPONSES WITH SETTIMEOUT
-    setTimeout(() => {
-        renderChatbotResponse(userInput);
-        setScrollPosition();
-        toggleLoading(true);
-    }, 1200);
+
+    renderChatbotResponse(userInput);
+
 };
 
 // RENDER CHATBOT RESPONSES 
-const renderChatbotResponse = (userInput) =>{
+const renderChatbotResponse = (userInput) => {
     const res = getChatbotResponse(userInput);
-    renderMessageEle(res);
 };
 
 const renderMessageEle = (txt, type) => {
     // DIFF CHAT BORDER STYLES FOR USER AND BOT
     let className = "user-message";
-    if (type !== "user"){
-        className = "chatbot-message";
-    }
+    
     const messageEle = document.createElement("div");
     const textNode = document.createTextNode(txt);
     messageEle.classList.add(className);
     messageEle.append(textNode);
-    chatBody.append(messageEle);
+    if (type !== "user") {
+        // IF IT IS A CHATBOT MESSAGE THEN ADD  BOT ICON
+        className = "chatbot-message";
+        messageEle.classList.add(className);
+        const botResponseContainer = document.createElement("div");
+        botResponseContainer.classList.add("bot-response-container");
+        const botImage = document.createElement("img");
+        botImage.setAttribute("src", "./Nova/images/Nebula profile/Nebula Icon.png")
+    }else{
+        messageEle.classList.add(className);
+        chatBody.append(messageEle);
+    }
+    
 };
 
 // GETTING BOT RESPONSES, and if user input is empty
 const getChatbotResponse = (userInput) => {
-    return responseObj[userInput] == undefined ? "Please try something else" : responseObj[userInput];
+    chatBotService.getBotResponse(userInput)
+        .then((response) => {
+            renderMessageEle(response);
+            setScrollPosition();
+            toggleLoading(true);
+        })
+        .catch((error) => { 
+            toggleLoading(true);
+         });
 };
 
 // SET SCROLL POSITION
-const setScrollPosition = () =>{
-    if(chatBody.scrollHeight > 0){
+const setScrollPosition = () => {
+    if (chatBody.scrollHeight > 0) {
         chatBody.scrollTop = chatBody.scrollHeight;
     }
 }

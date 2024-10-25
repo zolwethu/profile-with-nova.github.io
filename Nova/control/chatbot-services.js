@@ -6,8 +6,17 @@ const responseObj = {
     time: new Date().toLocaleTimeString(),
 };
 
+// returning a promise
 const fetchResponse = (userInput) => {
-    return responseObj[userInput];
+    return new Promise((res, reject) => {
+        try{
+            setTimeout(() => {
+            res(responseObj[userInput]);
+            }, 1200);
+        } catch(error){
+            reject(error);
+        }
+    });
 };
 
 const chatBotService = {
