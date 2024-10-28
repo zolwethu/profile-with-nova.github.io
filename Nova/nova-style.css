@@ -133,14 +133,24 @@
 }
 
 .user-message,
-.chatbot-message,
-.botText{
+.chatbot-message{
   padding: 8px;
   background: var(--border-color);
   color: #e8e8e8;
   margin: 5px;
   width: max-content;
   border-radius: 10px 3px 10px 10px;
+}
+.chat-body .first {
+  display: flex;
+  position: absolute;
+  top: 12%;
+  left: 5%;
+  background: #4cc9f0;
+  color: #202020e3;
+  align-self: flex-start;
+  border-radius: 3px 10px 10px 10px;
+  width: max-content;
 }
 
 .user-message {
