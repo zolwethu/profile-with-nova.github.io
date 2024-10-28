@@ -1,5 +1,5 @@
 const responseObj = {
-    hello: "Hey! How are you doing?",
+    hello: "Hey My name is Mabhukhado! How are you doing?",
     hey: "Hey! What's Up",
     date: new Date().toDateString(),
     today: new Date().toDateString(),

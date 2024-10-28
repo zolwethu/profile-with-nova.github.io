@@ -1,10 +1,24 @@
 const responseObj = {
-    hello: "Hey! How are you doing?",
+    hello: "Hey My name is Mabhukhado! How are you doing?",
     hey: "Hey! What's Up",
     date: new Date().toDateString(),
     today: new Date().toDateString(),
     time: new Date().toLocaleTimeString(),
 };
+// Fun and Casual
+
+// Can you tell me a fun fact?
+// What’s your favorite color?
+// Do you have any hobbies?
+// What’s the meaning of life?
+
+
+// Entertainment and Leisure
+
+// What are some good movies to watch?
+// Can you recommend a book?
+// What’s a popular song right now?
+// What are some fun things to do this weekend?
 
 // returning a promise
 const fetchResponse = (userInput) => {

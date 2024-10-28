@@ -7,7 +7,31 @@ const loadingEle = document.querySelector(".loading");
 const chatHeader = document.querySelector(".chat-header");
 const container = document.querySelector(".bot-container");
 
+// GET TIME 
+function getTime(){
+    let today = new Date();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
 
+    if(hours < 10){
+        hours = "0" + hours;
+    }
+    if(minutes < 10){
+        minutes = "0" + minutes;
+    }
+    
+    let time = hours + ":" + minutes;
+    return time;
+}
+
+// Gets the first message
+function firstBotMessage() {
+    let firstMessage = "How's it going?"
+    let time = getTime();
+    $("#chat-timestamp").append(time);
+}
+
+firstBotMessage();
 
 send.addEventListener("click", () => renderUserMessage());
 
@@ -22,7 +46,6 @@ textInput.addEventListener("keyup", (event) => {
 // EXPAND AND COLLAPSE CHATBOT
 chatHeader.addEventListener("click", () => {
     container.classList.toggle("collapse");
-    content.classList.toggle("bouncing");
 });
 
 // RENDER USER MESSAGES
@@ -32,8 +55,8 @@ const renderUserMessage = () => {
     textInput.value = "";
 
     toggleLoading(false);
-    // DELAY CHATBOT RESPONSES WITH SETTIMEOUT
 
+    // DELAY CHATBOT RESPONSES WITH SETTIMEOUT
     renderChatbotResponse(userInput);
 
 };
@@ -91,3 +114,4 @@ const setScrollPosition = () => {
 
 // HIDE N SHOW LOADING ANIMATION
 const toggleLoading = (show) => loadingEle.classList.toggle("hide", show);
+
