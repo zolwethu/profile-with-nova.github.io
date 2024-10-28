@@ -6,6 +6,10 @@
   --text-color: #0d000e;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +29,6 @@
   box-shadow: 0 12px 18px rgba(0, 0, 0, 0.4),
     inset 0 -24px 36px rgba(0, 0, 0, 0.4),
     inset 0 24px 36px rgba(255, 255, 255, 0.6);
-
 }
 
 .bot-container.collapse {
@@ -35,7 +38,44 @@
   align-items: center;
   overflow: hidden;
   border: none;
+  scroll-behavior: smooth;
+  transition: all 0.5s ease-in-out;
 }
+
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate3d(0, -30px, 0) scaleY(1.1);
+  }
+
+  70% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate3d(0, -15px, 0) scaleY(1.05);
+  }
+
+  80% {
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: translate3d(0, 0, 0) scaleY(0.95);
+  }
+
+  90% {
+      transform: translate3d(0, -4px, 0) scaleY(1.02);
+  }
+}
+
+.collapse.bouncing {
+  animation: bounce 0.5s;
+}
+
 .collapse .chat-title{
   font-size: 1rem;
 }

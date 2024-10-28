@@ -8,6 +8,7 @@ const chatHeader = document.querySelector(".chat-header");
 const container = document.querySelector(".bot-container");
 
 
+
 send.addEventListener("click", () => renderUserMessage());
 
 // KEY PRESS ENTER TO SEND MESSAGE
@@ -21,6 +22,7 @@ textInput.addEventListener("keyup", (event) => {
 // EXPAND AND COLLAPSE CHATBOT
 chatHeader.addEventListener("click", () => {
     container.classList.toggle("collapse");
+    content.classList.toggle("bouncing");
 });
 
 // RENDER USER MESSAGES
