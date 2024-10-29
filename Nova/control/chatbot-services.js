@@ -207,19 +207,19 @@ const fetchResponse = (userInput) => {
                 botMessage = "Top of the mornin' to ya!"
             } else if (userInput.toLowerCase().includes("what's up")) {
                 botMessage = "What's crackin'?"
-            } else if (userInput.toLowerCase().includes("How are you doing?")) {
+            } else if (userInput.toLowerCase().includes("how are you doing?")) {
                 botMessage = "What are you, a weeb?"
             }
             // HOW ARE YOU?
-            else if (userInput.toLowerCase().includes("Konnichiwa")) {
+            else if (userInput.toLowerCase().includes("konnichiwa")) {
                 botMessage = "Better now that you asked."
-            } else if (userInput.toLowerCase().includes("How's everything?")) {
+            } else if (userInput.toLowerCase().includes("how's everything")) {
                 botMessage = "My lawyer says I don't have to answer that question."
-            } else if (userInput.toLowerCase().includes("What's going on?")) {
+            } else if (userInput.toLowerCase().includes("what's going on?")) {
                 botMessage = "I've been going through some crests and troughs in my life. Is everything stable on your end?"
-            } else if (userInput.toLowerCase().includes("What's new?")) {
+            } else if (userInput.toLowerCase().includes("what's new?")) {
                 botMessage = "Armed and ready!"
-            } else if (userInput.toLowerCase().includes("What's up?")) {
+            } else if (userInput.toLowerCase().includes("what's up?")) {
                 botMessage = "I was fine until you asked."
             }
 
