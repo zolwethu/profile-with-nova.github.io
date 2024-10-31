@@ -22,6 +22,8 @@ html {
     --card-bg: #ededed;
     --stoke: #eaeaea;
     --pg-color: #3c3c3c;
+    --edu-bg: #3A404A;
+    --edu-card-bg: #282B30;
 }
 
 body {
@@ -82,7 +84,7 @@ body {
 }
 
 .section-page img {
-    width: 45%;
+    width: 40%;
     border-radius: 50%;
     background-size: cover;
     background-position: top;
@@ -143,18 +145,20 @@ body {
     font: 25px;
     color: var(--secondary-color);
 }
-.menu li a:hover{
+
+.menu li a:hover {
     color: var(--border-color);
 }
+
 /* SOCIAL SECTION */
 
 .socials {
     display: flex;
     gap: 20px;
     padding-top: 40px;
-  }
-  
-  .socials a svg {
+}
+
+.socials a svg {
     background: #fffffff3;
     padding: 1em;
     border-radius: 50%;
@@ -165,11 +169,11 @@ body {
     display: grid;
     place-items: center;
     box-shadow: 0 12px 18px rgba(0, 0, 0, 0.3),
-      inset 0 -21px 31.5px rgba(0, 0, 0, 0.3),
-      inset 0 21px 31.5px rgba(255, 255, 255, 0.6);
-  }
-  
-  .socials a::before {
+        inset 0 -21px 31.5px rgba(0, 0, 0, 0.3),
+        inset 0 21px 31.5px rgba(255, 255, 255, 0.6);
+}
+
+.socials a::before {
     content: attr(data-social);
     position: absolute;
     background-color: var(--accent-color);
@@ -181,19 +185,19 @@ body {
     transform: translateY(-30px) rotate(25deg);
     opacity: 0;
     transition: 400ms cubic-bezier(.42, 0, .44, 1.68);
-  }
-  
-  .socials a:hover {
+}
+
+.socials a:hover {
     fill: white;
-  }
-  
-  .socials a:hover svg {
+}
+
+.socials a:hover svg {
     fill: white;
     background: var(--accent-color);
-  
-  }
-  
-  .socials a::after {
+
+}
+
+.socials a::after {
     content: '';
     position: absolute;
     height: 0;
@@ -204,28 +208,18 @@ body {
     transform: translateY(0) rotate(25deg);
     opacity: 0;
     transition: 200ms cubic-bezier(.42, 0, .44, 1.68);
-  }
-  
-  .socials a:hover::before {
+}
+
+.socials a:hover::before {
     transform: translateY(-65px) rotate(0);
     opacity: 1;
-  }
-  
-  .socials a:hover::after {
+}
+
+.socials a:hover::after {
     transform: translateY(-42px) rotate(0);
     opacity: 1;
-  }
-/* 
-.social-icon {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50%;
-    gap: 10px;
 }
- */
+
 .section-icon i {
     font-size: 45px;
     color: var(--secondary-color);
@@ -281,8 +275,27 @@ body {
 .left-text {
     position: absolute;
     left: 0%;
-    top: 1%;
+    top: 0%;
     z-index: 0;
+}
+
+@keyframes bounce{
+    0% {transform: scale(1,1) translateY(0);}
+    10% {transform: scale(1.1, .9) translateY(0);}
+    30% {transform: scale(.9, 1.1) translateY(-55px);}
+    50% {transform: scale(1.05, .95) translateY(0);}
+    58% {transform: scale(1,1) translateY(-7px);}
+    65% {transform: scale(1,1) translateY(0);}
+    100% {transform: scale(1,1) translateY(0);}
+}
+.left-text .ve{
+    position: absolute;
+    left: 100%;
+    top: 0%;
+    z-index: 0;
+}
+.left-text .ve{
+    animation: bounce 5.5s ease infinite 5.5s;
 }
 
 .right-text {
@@ -293,7 +306,7 @@ body {
 
 .right-text h2,
 .left-text h2 {
-    font-size: 7.5rem;
+    font-size: 7rem;
     font-weight: 900;
     color: var(--primary-color);
     position: absolute;
@@ -362,6 +375,7 @@ body {
     stroke: var(--border-color);
 }
 
+
 .progress-card .number {
     position: absolute;
     top: 40%;
@@ -380,6 +394,214 @@ body {
 
 .progress-card .title h2 {
     font-size: 22px;
+}
+
+/* EDUCATION SECTION */
+.sections {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5%;
+    font-family: Consolas, monospace;
+    padding: 0;
+    background-color: var(--edu-bg);
+    margin: 0;
+    border-radius: 10px;
+    box-shadow:
+        inset 5.87px 6.55px 12.43px -1.55px rgba(0, 0, 0, 0.15),
+        inset -8.81px -9.83px 12.43px -1.55px rgba(0, 0, 0, 0.3),
+        17.62px 19.66px 9.32px -4.66px rgba(0, 0, 0, 0.6);
+}
+
+.edu-container {
+    width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edu-container .edu-card {
+    position: relative;
+}
+
+.edu-container .edu-card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.edu-container .edu-card .face.face1 {
+    background: var(--edu-card-bg);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+    box-shadow: inset 1.08px -2.80px 3.88px -0.48px rgba(0, 0, 0, 0.15),
+        inset -1.62px 4.20px 3.88px -0.48px rgba(0, 0, 0, 0.3),
+        3.23px -8.40px 2.91px -1.45px rgba(0, 0, 0, 0.6);
+}
+
+.edu-container .edu-card:hover .face.face1 {
+    background: var(--border-color);
+    transform: translateY(0);
+}
+
+.edu-container .edu-card .face.face1 .card-content {
+    opacity: 0.3;
+    transition: 0.5s;
+}
+
+.edu-container .edu-card:hover .face.face1 .card-content {
+    opacity: 1;
+}
+
+.edu-container .edu-card .face.face1 .card-content img {
+    max-width: 100px;
+}
+
+.edu-container .edu-card .face.face1 .card-content h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: var(--body-color);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.edu-container .edu-card .face.face2 {
+    position: relative;
+    background: var(--body-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: inset 2.51px 6.10px 8.62px -1.08px rgba(0, 0, 0, 0.15),
+        inset -3.77px -9.15px 8.62px -1.08px rgba(0, 0, 0, 0.3),
+        7.54px 18.31px 6.46px -3.23px rgba(0, 0, 0, 0.6);
+    transform: translateY(-100px);
+}
+
+.edu-container .edu-card:hover .face.face2 {
+    transform: translateY(0);
+}
+
+.edu-container .edu-card .face.face2 .card-content p {
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+.edu-container .edu-card .face.face2 .card-content a {
+    margin: 15px 0 0;
+    border-radius: 10%;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: var(--edu-bg);
+    padding: 5px;
+    border: 1px solid var(--edu-bg);
+    box-shadow: inset 0.02px 2.20px 2.22px -0.28px rgba(0, 0, 0, 0.15),
+  inset -0.04px -3.30px 2.22px -0.28px rgba(0, 0, 0, 0.3),
+  0.07px 6.60px 1.67px -0.83px rgba(0, 0, 0, 0.6);
+  
+}
+
+.edu-container .edu-card .face.face2 .card-content a:hover {
+    background: var(--edu-bg);
+    color: var(--body-color);
+
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .edu-container {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin-top: 5%;
+    }
+    
+    .edu-container .edu-card {
+        width: 80%; 
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .edu-container {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin-top: 5%;
+    }
+    
+    .edu-container .edu-card {
+        width: 80%; 
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .edu-container {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin-top: 5%;
+    }
+    
+    .edu-container .edu-card {
+        width: 80%; 
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .edu-container {
+        width: 600px;
+    }
+}
+
+@media (max-width: 700px) {
+    .edu-container {
+        width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .edu-container {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin-top: 5%;
+    }
+    
+    .edu-container .edu-card {
+        width: 80%; 
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .edu-container .edu-card .face {
+        width: 100%;
+        height: auto;
+    }
+
+    .edu-container .edu-card .face.face1,
+    .edu-container .edu-card .face.face2 {
+        transform: none;
+    }
 }
 
 /* SERVICES SECTION */
@@ -448,6 +670,7 @@ body {
     margin-bottom: 0;
     color: var(--pg-color);
 }
+
 /* PORTFOLIO PAGE */
 
 
@@ -456,18 +679,18 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: start;
-  }
-  
-  .projects-title{
+}
+
+.projects-title {
     padding-top: -50px;
     margin-top: -50px;
     margin-bottom: 30px;
     font-size: 40px;
     align-items: center;
     color: #555;
-  }
-  
-  .card {
+}
+
+.card {
     width: 80px;
     border-radius: .75rem;
     background-size: cover;
@@ -479,15 +702,15 @@ body {
     align-items: flex-end;
     transition: .6s cubic-bezier(.28, -0.03, 0, .99);
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
-  }
-  
-  .card>.row {
+}
+
+.card>.row {
     color: white;
     display: flex;
     flex-wrap: nowrap;
-  }
-  
-  .card>.row>.icon {
+}
+
+.card>.row>.icon {
     background: #223;
     color: white;
     border-radius: 50%;
@@ -496,9 +719,9 @@ body {
     justify-content: center;
     align-items: center;
     margin: 15px;
-  }
-  
-  .card>.row>.description {
+}
+
+.card>.row>.description {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -509,31 +732,31 @@ body {
     transform: translateY(30px);
     transition-delay: .3s;
     transition: all .3s ease;
-  }
-  
-  .description p {
+}
+
+.description p {
     color: #b0b0ba;
     padding-top: 5px;
     margin-bottom: 20px;
-  }
-  
-  .description h4 {
+}
+
+.description h4 {
     text-transform: uppercase;
-  }
-  
-  .projects input {
+}
+
+.projects input {
     display: none;
-  }
-  
-  input:checked+label {
+}
+
+input:checked+label {
     width: 600px;
-  }
-  
-  input:checked+label .description {
+}
+
+input:checked+label .description {
     opacity: 1 !important;
     transform: translateY(0) !important;
-  }
-  
+}
+
 
 /* CONTACT PAGE */
 
@@ -659,9 +882,11 @@ a {
     border-left: 2px solid var(--secondary-color);
     padding-left: 10px;
 }
-.footer a:hover{
+
+.footer a:hover {
     color: var(--border-color);
 }
+
 .footer ul li:nth-child(1) {
     border: none;
 }
@@ -733,6 +958,7 @@ a {
     }
 }
 
+/* SERVICES RESPONSIVENESS */
 @media(max-width:1100px) {
     .services-rows {
         width: 100%;
