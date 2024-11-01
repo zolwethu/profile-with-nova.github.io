@@ -167,7 +167,7 @@ const fetchResponse = (userInput) => {
             } else if (userInput.toLowerCase().includes("goal")) {
                 botMessage = "My everyday goal is to be better at something than I was the day before, learning a new word, doing that extra pushups"
             } else if (userInput.toLowerCase().includes("experience")) {
-                botMessage = ""
+                botMessage = "Had a very short WIL programme at Zenotha IT SOlutions where we created part of an online learning plaform. I'm am currently a Junior Software Dev at the lovely CAPACITI"
 
 
                 // GOODBYES
