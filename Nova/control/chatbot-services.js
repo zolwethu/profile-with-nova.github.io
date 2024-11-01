@@ -36,35 +36,41 @@ const fetchResponse = (userInput) => {
             // GREETINGS
             if (userInput.toLowerCase().includes("hello")) {
                 botMessage = "Ello, gov'nor! How may i be of help to you?"
+            } else if (userInput.toLowerCase().includes("hi")) {
+                botMessage = "oh hey there! How may I help?"
             } else if (userInput.toLowerCase().includes("hey")) {
                 botMessage = "Hey howdy?! How may i be of help to you?"
             } else if (userInput.toLowerCase().includes("howdy")) {
-                botMessage = "Howdy, partner!"
+                botMessage = "Howdy, partner! How may I help?"
             } else if (userInput.toLowerCase().includes("morning")) {
-                botMessage = "Top of the mornin' to ya!"
+                botMessage = "Top of the mornin' to ya! How may I help?"
             } else if (userInput.toLowerCase().includes("what's up")) {
-                botMessage = "What's crackin'?"
-            } else if (userInput.toLowerCase().includes("how are you doing?")) {
-                botMessage = "What are you, a weeb?"
+                botMessage = "What's crackin'? What can I do for you?"
+            } else if (userInput.toLowerCase().includes("konnichiwa")) {
+                botMessage = "What are you, a weeb? "
             }
             // HOW ARE YOU?
             else if (userInput.toLowerCase().includes("konnichiwa")) {
-                botMessage = "Better now that you asked."
+                botMessage = "Better now that you asked. What can I do for you?"
             } else if (userInput.toLowerCase().includes("how's everything")) {
-                botMessage = "My lawyer says I don't have to answer that question."
+                botMessage = "My lawyer says I don't have to answer that question. What can I do for you?"
             } else if (userInput.toLowerCase().includes("what's going on?")) {
                 botMessage = "I've been going through some crests and troughs in my life. Is everything stable on your end?"
             } else if (userInput.toLowerCase().includes("what's new?")) {
-                botMessage = "Armed and ready!"
+                botMessage = "Armed and ready! What can I do for you?"
             } else if (userInput.toLowerCase().includes("what's up?")) {
-                botMessage = "I was fine until you asked."
+                botMessage = "I was fine until you asked. What can I do for you?"
             }
 
             // Entertainment and Leisure
-            else if (userInput.toLowerCase().includes("movies")) {
+            else if (userInput.toLowerCase().includes("movie")) {
                 botMessage = "Bullet train is the bomb, but he would go with Chris Hermsworth's Bullet train"
+            } else if (userInput.toLowerCase().includes("song")) {
+                botMessage = "Metro Booming's Like That with Future and Kendrick Lamar slaps!"
+            } else if (userInput.toLowerCase().includes("music")) {
+                botMessage = "Anything goes, from the lovely blues, jazz, pop, hippity pop, choral, opera."
             } else if (userInput.toLowerCase().includes("book")) {
-                botMessage = "Last book he has read was 'HOW TO MAKE WOMEN HAPPY?', very informative. Had 2321 pages, all of em were empty "
+                botMessage = "Last book he has read was 'HOW TO MAKE WOMEN HAPPY?', very informative. Had 2321 pages, all of em were empty"
             } else if (userInput.toLowerCase().includes("weekend")) {
                 botMessage = "He watches football games, always goes to bed crying because of Manchester United lol"
             } else if (userInput.toLowerCase().includes("fun")) {
@@ -90,13 +96,13 @@ const fetchResponse = (userInput) => {
                 botMessage = "I am a bot, but I can be whatever you want me to be(wink wink)"
             } else if (userInput.toLowerCase().includes("age")) {
                 botMessage = "I been here since the begining of time, and will be here when humans inevitible destroy themselves in 2026"
-            }else if (userInput.toLowerCase().includes("old")) {
+            } else if (userInput.toLowerCase().includes("old")) {
                 botMessage = "I been here since the begining of time, and will be here when humans inevitible destroy themselves in 2026"
             }
             // EDUCATION
             else if (userInput.toLowerCase().includes("education")) {
                 botMessage = "Software Development Graduate, at Mangosuthu Uni Tech in 2022, and has certifications in Technical Introd to Cyber Security 1.0, 2.0, Practical Cloud Computing and Data Science using python"
-            }else if (userInput.toLowerCase().includes("certification")) {
+            } else if (userInput.toLowerCase().includes("certification")) {
                 botMessage = "Software Development Graduate, at Mangosuthu Uni Tech in 2022, and has certifications in Technical Introd to Cyber Security 1.0, 2.0, Practical Cloud Computing and Data Science using python"
             } else if (userInput.toLowerCase().includes("skill")) {
                 botMessage = "Innovative mindset, problem solving ability flexible approach andability to adapt and Open to receiving feedbackfor continuous personal growth"
@@ -110,10 +116,10 @@ const fetchResponse = (userInput) => {
                 botMessage = ""
             } else if (userInput.toLowerCase().includes("continue")) {
                 botMessage = "Find a mentor, Build on tech fundamentals and Developing my soft skills more"
-            } 
+            }
             else if (userInput.toLowerCase().includes("growth")) {
                 botMessage = "Find a mentor, Build on tech fundamentals and Developing my soft skills more"
-            }else if (userInput.toLowerCase().includes("extracurricular")) {
+            } else if (userInput.toLowerCase().includes("extracurricular")) {
                 botMessage = "Music is my go-to, I want to learn playing all guitars and a piano, n I enjoy PES 21 with latest mods"
             }
             else if (userInput.toLowerCase().includes("activities")) {
@@ -146,7 +152,7 @@ const fetchResponse = (userInput) => {
             // HUMAN PERSONALITY
             else if (userInput.toLowerCase().includes("inspire")) {
                 botMessage = "The love of coding. Coding is not just a job, but a craft, a hobby, and a way of expression. It's art! It's Mortzat!"
-            }else if (userInput.toLowerCase().includes("inspiration")) {
+            } else if (userInput.toLowerCase().includes("inspiration")) {
                 botMessage = "The love of coding. Coding is not just a job, but a craft, a hobby, and a way of expression. It's art! It's Mortzat!"
             } else if (userInput.toLowerCase().includes("strength")) {
                 botMessage = "I am curious and open-minded, motivation is nothing i'm short of bcoz I know where Im at, n where I want to be"
@@ -158,10 +164,40 @@ const fetchResponse = (userInput) => {
                 botMessage = "Being better everyday at something, learning a new word, doing that extra pushups"
             } else if (userInput.toLowerCase().includes("medium-term")) {
                 botMessage = "Find a mentor, Build on tech fundamentals and Developing my soft skills more"
-            }else if (userInput.toLowerCase().includes("goal")) {
+            } else if (userInput.toLowerCase().includes("goal")) {
                 botMessage = "My everyday goal is to be better at something than I was the day before, learning a new word, doing that extra pushups"
-            }else if (userInput.toLowerCase().includes("experience")) {
+            } else if (userInput.toLowerCase().includes("experience")) {
                 botMessage = ""
+
+
+                // GOODBYES
+            } else if (userInput.toLowerCase().includes("bye")) {
+                botMessage = "See ya!"
+            } else if (userInput.toLowerCase().includes("goodbye")) {
+                botMessage = "See you around"
+            } else if (userInput.toLowerCase().includes("thank")) {
+                botMessage = "No THANK YOU! Don’t be a stranger."
+
+            } else if (userInput.toLowerCase().includes("Ciao")) {
+                botMessage = "Sayonara"
+
+            } else if (userInput.toLowerCase().includes("take")) {
+                botMessage = "Oh thanks love, have a good one!"
+
+            } else if (userInput.toLowerCase().includes("farewell")) {
+                botMessage = "Speak to you then."
+            } else if (userInput.toLowerCase().includes("later")) {
+                botMessage = "Take it sleazy!"
+
+            } else if (userInput.toLowerCase().includes("see")) {
+                botMessage = "See ya, wouldn´t wanna be ya!"
+
+            } else if (userInput.toLowerCase().includes("cheer")) {
+                botMessage = "Oh cheers love!"
+
+            } else if (userInput.toLowerCase().includes("xoxo")) {
+                botMessage = "oh I like this one! Bye naughty"
+
             } else {
                 botMessage = "What would you like to know about Sibusiso? Please choose ";
             }
