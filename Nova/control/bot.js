@@ -50,15 +50,13 @@ chatHeader.addEventListener("click", () => {
 
 // RENDER USER MESSAGES
 const renderUserMessage = () => {
-    const userInput = textInput.value;
+    const userInput = textInput.value.trim(); // Trim whitespace
+    if (!userInput) return; // Prevent rendering if input is empty
+
     renderMessageEle(userInput, "user");
     textInput.value = "";
-
     toggleLoading(false);
-
-    // DELAY CHATBOT RESPONSES WITH SETTIMEOUT
     renderChatbotResponse(userInput);
-
 };
 
 // RENDER CHATBOT RESPONSES 
@@ -107,11 +105,10 @@ const getChatbotResponse = (userInput) => {
 
 // SET SCROLL POSITION
 const setScrollPosition = () => {
-    if (chatBody.scrollHeight > 0) {
+    if (chatBody && chatBody.scrollHeight > 0) {
         chatBody.scrollTop = chatBody.scrollHeight;
     }
-}
-
+};
 // HIDE N SHOW LOADING ANIMATION
 const toggleLoading = (show) => loadingEle.classList.toggle("hide", show);
 

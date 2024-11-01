@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 :root {
-  --bg-color: #ececec80;
+  --bg-color: #ececec;
   --border-color: #cf02da9f;
   --text-color: #0d000e;
 }
@@ -18,14 +18,14 @@
   width: 350px;
   background: var(--bg-color);
   position: fixed;
-  bottom: 60px;
+  z-index: 1000;
+  bottom: 120px;
   right: 20px;
   border: none;
   border-radius: 10px;
-    box-shadow: inset 5.87px 6.55px 12.43px -1.55px rgba(0, 0, 0, 0.15),
-        inset -8.81px -9.83px 12.43px -1.55px rgba(0, 0, 0, 0.3),
-        17.62px 19.66px 9.32px -4.66px rgba(0, 0, 0, 0.6);
-
+  box-shadow: inset 5.87px 6.55px 12.43px -1.55px rgba(0, 0, 0, 0.15),
+    inset -8.81px -9.83px 12.43px -1.55px rgba(0, 0, 0, 0.3),
+    17.62px 19.66px 9.32px -4.66px rgba(0, 0, 0, 0.6);
   transition: all 0.5s ease-in-out;
 }
 
@@ -69,8 +69,8 @@
   border-radius: 20px;
   background: #e9e9e9;
   box-shadow: inset -1.32px 2.24px 3.56px -0.44px rgba(0, 0, 0, 0.15),
-  inset -1.97px -3.36px 3.56px -0.44px rgba(0, 0, 0, 0.3),
-  3.95px 6.73px 2.67px -1.33px rgba(0, 0, 0, 0.6);
+    inset -1.97px -3.36px 3.56px -0.44px rgba(0, 0, 0, 0.3),
+    3.95px 6.73px 2.67px -1.33px rgba(0, 0, 0, 0.6);
   align-items: flex-end;
   overflow: hidden;
   overflow-y: auto;
@@ -137,11 +137,11 @@
 }
 
 .user-message,
-.chatbot-message{
+.chatbot-message {
   padding: 8px;
   background: var(--border-color);
   color: #e8e8e8;
-  margin: 15px 5px 5px; 
+  margin: 15px 5px 5px;
   width: max-content;
   border-radius: 10px 3px 10px 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -152,6 +152,7 @@
 .chatbot-message:hover {
   transform: scale(1.02);
 }
+
 .chat-body .first {
   display: flex;
   position: absolute;
@@ -166,13 +167,14 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
+
 .user-message {
   transform: translate(50%);
   animation: fade-in-right .3s ease-in-out both;
   opacity: 0;
 }
 
-.chatbot-message{
+.chatbot-message {
   background: #4cc9f0;
   color: #202020e3;
   align-self: flex-start;
@@ -264,21 +266,22 @@
 /* Responsive Styles for max-width 1000px */
 @media (max-width: 1000px) {
   .bot-container {
-    width: 35%; 
+    width: 35%;
   }
 
   .chat-header {
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
   }
 
   .chat-body {
-    height: 280px; 
+    height: 280px;
   }
 
   .user-message,
   .chatbot-message {
-    padding: 9px; 
+    padding: 9px;
   }
+
   .bot-container.collapse {
     width: 150px;
   }
@@ -287,101 +290,104 @@
 /* Responsive Styles for max-width 900px */
 @media (max-width: 900px) {
   .bot-container {
-    width: 40%; 
+    width: 40%;
   }
 
   .chat-header {
-    font-size: 1.3rem; 
+    font-size: 1.3rem;
   }
 
   .chat-body {
-    height: 250px; 
+    height: 250px;
   }
 
   .user-message,
   .chatbot-message {
-    padding: 8px; 
+    padding: 8px;
   }
+
   .chat-header {
-    height: 50px; 
-    font-size: 1.2rem; 
-    justify-content: center; 
-    padding: 5px; 
+    height: 50px;
+    font-size: 1.2rem;
+    justify-content: center;
+    padding: 5px;
   }
 
   .chat-header .chat-title {
     padding-left: 2px;
   }
+
   .bot-container.collapse {
-    width: 130px; 
+    width: 130px;
   }
 }
 
 /* Responsive Styles for max-width 800px */
 @media (max-width: 800px) {
   .bot-container {
-    width: 45%; 
+    width: 45%;
   }
 
   .chat-header {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 
   .chat-body {
-    height: 220px; 
+    height: 220px;
   }
 
   .user-message,
   .chatbot-message {
-    font-size: 0.9rem; 
-    padding: 7px; 
+    font-size: 0.9rem;
+    padding: 7px;
   }
 
   .input {
-    padding: 7px; 
+    padding: 7px;
   }
 
   .send {
-    margin-right: 10px; 
+    margin-right: 10px;
   }
+
   .bot-container.collapse {
-    width: 120px; 
-    height: 75px; 
+    width: 120px;
+    height: 75px;
   }
 }
 
 /* Responsive Styles for max-width 600px */
 @media (max-width: 600px) {
   .bot-container {
-    width: 60%; 
-    height: auto; 
+    width: 60%;
+    height: auto;
   }
 
   .chat-header {
-    font-size: 1.3rem; 
+    font-size: 1.3rem;
   }
 
   .chat-body {
-    height: 250px; 
+    height: 250px;
   }
 
   .user-message,
   .chatbot-message {
-    padding: 8px; 
-    font-size: 0.9rem; 
+    padding: 8px;
+    font-size: 0.9rem;
   }
 
   .input {
-    padding: 8px; 
+    padding: 8px;
   }
 
   .send {
-    margin-right: 10px; 
+    margin-right: 10px;
   }
 
   .bot-container.collapse {
-    width: 100px; 
-    height: 65px; 
+    width: 100px;
+    height: 65px;
   }
 }
 
@@ -389,64 +395,65 @@
 /* Responsive Styles for max-width 500px */
 @media (max-width: 500px) {
   .bot-container {
-    width: 90%; 
-    height: auto; 
+    width: 90%;
+    height: auto;
   }
 
   .chat-header {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 
   .chat-body {
-    height: 220px; 
+    height: 220px;
   }
 
   .user-message,
   .chatbot-message {
-    padding: 7px; 
-    font-size: 0.85rem; 
+    padding: 7px;
+    font-size: 0.85rem;
   }
 
   .input {
-    padding: 7px; 
+    padding: 7px;
   }
 
   .send {
-    margin-right: 5px; 
+    margin-right: 5px;
   }
 }
 
 /* Responsive Styles for max-width 400px */
 @media (max-width: 400px) {
   .bot-container {
-    width: 90%; 
-    height: auto; 
+    width: 90%;
+    height: auto;
   }
 
   .chat-header {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
 
   .chat-body {
-    height: 200px; 
+    height: 200px;
   }
 
   .user-message,
   .chatbot-message {
-    padding: 6px; 
-    font-size: 0.8rem; 
+    padding: 6px;
+    font-size: 0.8rem;
   }
 
   .input {
-    padding: 6px; 
+    padding: 6px;
   }
 
   .send {
-    margin-right: 5px; 
+    margin-right: 5px;
   }
+
   .bot-container.collapse {
-    width: 90px; 
-    height: 55px; 
+    width: 90px;
+    height: 55px;
   }
 
   .chat-header {
